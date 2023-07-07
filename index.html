@@ -60,11 +60,19 @@
             </li>
           </ul>
         </address>
+        <button
+          class="menu-toggle js-open-menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <svg class="burger-svg" height="24" width="32">
+            <use href="./images/icons.svg#icon-burger"></use>
+          </svg>
+        </button>
       </div>
     </header>
     <main>
       <!-- Hero section-->
-
       <section class="hero section">
         <div class="container">
           <h1 class="hero-title">Effective Solutions for Your Business</h1>
@@ -141,6 +149,10 @@
           <ul class="list">
             <li class="item">
               <img
+                srcset="
+                  ./images/project/comp@1x.jpg 1x,
+                  /images/project/comp@2x.jpg  2x
+                "
                 src="./images/macbook.jpg"
                 alt="pc application"
                 width="360"
@@ -150,6 +162,10 @@
 
             <li class="item">
               <img
+                srcset="
+                  ./images/project/phone@1x.jpg 1x,
+                  /images/project/phone@2x.jpg  2x
+                "
                 src="./images/phone-screen.jpg"
                 alt="smartphone application"
                 width="360"
@@ -159,6 +175,10 @@
 
             <li class="item">
               <img
+                srcset="
+                  ./images/project/both@1x.jpg 1x,
+                  ./images/project/both@2x.jpg 2x
+                "
                 src="./images/laptopandphone.jpg"
                 alt="pc and phone synchronized"
                 width="360"
@@ -175,6 +195,10 @@
           <ul class="list">
             <li class="item">
               <img
+                srcset="
+                  ./images/team-members/mark@1x.jpg 1x,
+                  ./images/team-members/mark@2x.jpg 2x
+                "
                 src="./images/team-members/guerrero.jpg"
                 alt="Product Designer"
                 width="264"
@@ -221,6 +245,10 @@
 
             <li class="item">
               <img
+                srcset="
+                  ./images/team-members/tom@1x.jpg 1x,
+                  ./images/team-members/tom@2x.jpg 2x
+                "
                 src="./images/team-members/ford.jpg"
                 alt="Frontend Developer"
                 width="264"
@@ -266,6 +294,10 @@
 
             <li class="item">
               <img
+                srcset="
+                  ./images/team-members/camila@1x.jpg 1x,
+                  ./images/team-members/camila@2x.jpg 2x
+                "
                 src="./images/team-members/garcia.jpg"
                 alt="Marketing"
                 width="264"
@@ -312,6 +344,10 @@
 
             <li class="item">
               <img
+                srcset="
+                  ./images/team-members/daniel@1x.jpg 1x,
+                  ./images/team-members/daniel@2x.jpg 2x
+                "
                 src="./images/team-members/wilson.jpg"
                 alt="UI Designer"
                 width="264"
@@ -578,7 +614,77 @@
         </form>
       </div>
     </div>
+    <!-- Модалка для телефона -->
+    <div class="menu-container js-menu-container" id="mobile-menu">
+      <button class="menu-toggle js-close-menu">
+        <svg class="svg-button" width="8" height="8">
+          <use href="./images/icons.svg#icon-close-button"></use>
+        </svg>
+      </button>
+
+      <ul class="mobile-menu">
+        <li><a href="" class="link active-page">Studio</a></li>
+        <li><a href="" class="link">Portfolio</a></li>
+        <li><a href="" class="link">Contacts</a></li>
+      </ul>
+
+      <ul class="list menu-container-list">
+        <li class="item">
+          <a href="tel:+110001111111" class="address-links link menu-tel"
+            >+11 (000) 111-11-11</a
+          >
+        </li>
+        <li class="item">
+          <a
+            href="mailto:info@devstudio.com"
+            class="address-links link menu-email"
+            >info@devstudio.com</a
+          >
+        </li>
+      </ul>
+      <ul class="menu-container-social social-list list">
+        <li class="social-list-item">
+          <a href="" class="social-list-link">
+            <svg class="social-list-svg" width="24" height="24">
+              <use href="./images/icons.svg#icon-instagram"></use>
+            </svg>
+          </a>
+        </li>
+
+        <li class="social-list-item">
+          <a href="" class="social-list-link">
+            <svg class="social-list-svg" width="24" height="24">
+              <use href="./images/icons.svg#icon-twitter"></use>
+            </svg>
+          </a>
+        </li>
+
+        <li class="social-list-item">
+          <a href="" class="social-list-link">
+            <svg class="social-list-svg" width="24" height="24">
+              <use href="./images/icons.svg#icon-facebook"></use>
+            </svg>
+          </a>
+        </li>
+
+        <li class="social-list-item">
+          <a href="" class="social-list-link">
+            <svg class="social-list-svg" width="24" height="24">
+              <use href="./images/icons.svg#icon-linkedin"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+
     <!-- js -->
     <script src="./js/modal.js"></script>
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/body-scroll-lock/3.1.5/bodyScrollLock.min.js"
+      integrity="sha512-HowizSDbQl7UPEAsPnvJHlQsnBmU2YMrv7KkTBulTLEGz9chfBoWYyZJL+MUO6p/yBuuMO/8jI7O29YRZ2uBlA=="
+      crossorigin="anonymous"
+    ></script>
+    <script defer src="js/mobile-menu.js"></script>
   </body>
 </html>
