@@ -270,19 +270,22 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-
   margin: 0;
   padding: 0;
+
   background-color: transparent;
   color: var(--h-color);
   cursor: pointer;
   border: none;
   border-radius: 50%;
   outline: none;
+
+  transition: color var(--transition);
 }
 
-.burger-svg {
-  stroke: currentColor;
+.menu-toggle:hover,
+.menu-toggle:focus {
+  color: var(--pressed-state);
 }
 
 @media screen and (min-width: 768px) {
@@ -300,6 +303,7 @@ p {
   margin: 0 auto;
   padding: 0;
   max-width: 1440px;
+
   background-image: linear-gradient(var(--hero-bg), var(--hero-bg)),
     url(../images/hero/mobile@1x.jpg);
   background-repeat: no-repeat;
@@ -462,7 +466,15 @@ p {
 }
 
 .features-section .features-title {
+  text-align: center;
   margin-bottom: 8px;
+}
+
+@media screen and (min-width: 768px) {
+  .features-section .features-title {
+    text-align: start;
+    margin-bottom: 8px;
+  }
 }
 
 /* svg для 2 части */
@@ -1092,7 +1104,8 @@ p {
 
 .modal {
   position: absolute;
-  width: 408px;
+
+  min-width: 300px;
   min-height: 584px;
   top: 50%;
   left: 50%;
@@ -1112,6 +1125,18 @@ p {
   transform: translate(-50%, -50%) scale(1.2);
 }
 
+@media screen and (min-width: 428px) {
+  .modal {
+    min-width: 392px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .modal {
+    min-width: 408px;
+  }
+}
+
 .close-button {
   position: absolute;
   display: flex;
@@ -1120,8 +1145,6 @@ p {
   height: 24px;
   top: 24px;
   right: 24px;
-  bottom: 536px;
-  left: 360px;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
@@ -1140,9 +1163,6 @@ p {
   border: none;
   fill: var(--white-text);
   background-color: var(--pressed-state);
-}
-.svg-button {
-  transition: fill var(--transition);
 }
 
 /* Modal FORM */
@@ -1181,6 +1201,7 @@ p {
 .form-item {
   display: block;
   margin-bottom: 4px;
+
   color: var(--lightslate, #8e8f99);
 
   font-size: 12px;
@@ -1197,6 +1218,7 @@ p {
   border-radius: 4px;
   outline: transparent;
   border: 1px solid var(--navyblue-modal, rgba(46, 47, 66, 0.4));
+
   background-color: transparent;
 
   transition: border-color var(--transition);
@@ -1217,7 +1239,6 @@ p {
   height: 56px;
   margin-left: auto;
   margin-right: auto;
-
   padding: 16px 32px;
 
   border-color: transparent;
@@ -1226,10 +1247,8 @@ p {
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
 
   background-color: var(--iris, #4d5ae5);
-
-  transition: background-color var(--transition);
-
   color: var(--white, #fff);
+
   text-align: center;
   font-size: 16px;
   font-family: Roboto, sans-serif;
@@ -1238,6 +1257,8 @@ p {
   line-height: 24px;
   letter-spacing: 0.64px;
   cursor: pointer;
+
+  transition: background-color var(--transition);
 }
 
 .modal-button:hover,
@@ -1300,7 +1321,6 @@ p {
   transition: background-color var(--transition), border var(--transition),
     fill var(--transition);
 }
-/* !!!!!!!!!!!!!!!!!!!!!!!! */
 
 .checkbox:checked + .form-item-checkbox > .checkbox-icon {
   background-color: var(--pressed-state);
@@ -1336,11 +1356,11 @@ p {
   left: 0;
   width: 100%;
   height: 100%;
-
   padding: 80px 35px 40px 40px;
-  background-color: var(--white-background);
-  z-index: 999;
 
+  background-color: var(--white-background);
+
+  z-index: 999;
   transform: translateX(100%);
   transition: transform 250ms ease-in-out;
 }
@@ -1356,7 +1376,22 @@ p {
   width: 24px;
   height: 24px;
   border: 1px solid var(--br-line-color);
+
   color: #fff;
+
+  transition: fill var(--transition), background-color var(--transition);
+}
+
+.menu-container .menu-toggle:hover,
+.menu-container .menu-toggle:focus {
+  border: none;
+
+  fill: var(--white-text);
+  background-color: var(--pressed-state);
+}
+
+.burger-svg {
+  stroke: currentColor;
 }
 
 .mobile-menu {
@@ -1374,13 +1409,20 @@ p {
   display: block;
 
   color: var(--h-color);
-  text-decoration: none;
 
   font-size: 36px;
   font-weight: 700;
   line-height: 1.11;
   letter-spacing: 0.72px;
   text-transform: capitalize;
+  text-decoration: none;
+
+  transition: color var(--transition);
+}
+
+.mobile-menu .link:hover,
+.mobile-menu .link:focus {
+  color: var(--pressed-state);
 }
 
 .mobile-menu .active-page {
@@ -1401,12 +1443,21 @@ p {
 
 .menu-container-list .menu-tel {
   margin-bottom: 40px;
+
   color: var(--primary-brand);
+
   font-size: 36px;
   font-style: normal;
   font-weight: 700;
   line-height: 1.11;
   letter-spacing: 0.72px;
+
+  transition: color var(--transition);
+}
+
+.menu-container-list .menu-tel:hover,
+.menu-container-list .menu-tel:focus {
+  color: var(--pressed-state);
 }
 
 @media screen and (max-width: 427px) {
@@ -1417,12 +1468,19 @@ p {
 
 .menu-container-list .menu-email {
   margin-bottom: 48px;
+
   color: var(--text-color);
+
   font-size: 20px;
   font-style: normal;
   font-weight: 500;
   line-height: 1.2;
   letter-spacing: 0.4px;
+}
+
+.menu-container-list .menu-email:hover,
+.menu-container-list .menu-email:focus {
+  color: var(--pressed-state);
 }
 
 .menu-container-social {
